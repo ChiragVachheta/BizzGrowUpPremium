@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-slate-300 font-sans antialiased;
+    background-image:
+      radial-gradient(60% 50% at 50% -10%, rgba(22, 182, 127, 0.16), transparent 60%),
+      radial-gradient(40% 40% at 90% 10%, rgba(14, 165, 233, 0.10), transparent 60%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-300;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-semibold text-ink-950 shadow-glow transition-all duration-200 hover:bg-brand-400 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-400/60;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition-all duration-200 hover:border-white/25 hover:bg-white/10 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white/30;
+  }
+  .card-surface {
+    @apply rounded-2xl border border-white/10 bg-ink-850/80 backdrop-blur-sm;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #070a12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2436;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #28324a;
+}
