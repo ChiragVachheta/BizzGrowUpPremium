@@ -1,4 +1,4 @@
-import { Check, Zap, Layout, ShoppingCart, RefreshCw, ArrowRight } from 'lucide-react';
+import { Check, Zap, LayoutGrid as Layout, ShoppingCart, RefreshCw, ArrowRight } from 'lucide-react';
 import { waLink } from '@/lib/site';
 import { useReveal } from '@/lib/useReveal';
 
@@ -85,7 +85,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href={waLink(`Hi BizGrowUp! I'm interested in the "${p.name}" package.`)}
+                href={waLink(`Hi GoBizLive! I'm interested in the "${p.name}" package.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-7 ${p.featured ? 'btn-primary' : 'btn-ghost'}`}
@@ -119,7 +119,7 @@ export default function Pricing() {
                 <span className="ml-1 text-sm text-slate-500">/month</span>
               </div>
               <a
-                href={waLink('Hi BizGrowUp! I would like to add the monthly maintenance plan.')}
+                href={waLink('Hi GoBizLive! I would like to add the monthly maintenance plan.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost whitespace-nowrap"

@@ -23,7 +23,7 @@ export default function WhatsAppWidget() {
                 <MessageCircle className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-white">BizGrowUp</p>
+                <p className="text-sm font-bold text-white">GoBizLive</p>
                 <p className="text-[11px] text-brand-300">Typically replies in minutes</p>
               </div>
             </div>
@@ -33,10 +33,10 @@ export default function WhatsAppWidget() {
           </div>
           <div className="p-4">
             <div className="rounded-xl rounded-tl-sm bg-white/5 p-3 text-sm text-slate-300">
-              Hi there! 👋 Ready to get your business online? Send us a message and we'll help you get started.
+              Hi there! Ready to get your business online? Send us a message and we'll help you get started.
             </div>
             <a
-              href={waLink('Hi BizGrowUp! I would like to chat about getting a website for my business.')}
+              href={waLink('Hi GoBizLive! I would like to chat about getting a website for my business.')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-3 w-full"

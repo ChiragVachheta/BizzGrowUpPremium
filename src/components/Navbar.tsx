@@ -28,7 +28,7 @@ export default function Navbar() {
             <Sparkles className="h-5 w-5 text-ink-950" />
           </span>
           <span className="font-display text-xl font-extrabold tracking-tight text-white">
-            Biz<span className="text-brand-400">GrowUp</span>
+            Go<span className="text-brand-400">BizLive</span>
           </span>
         </a>
 
@@ -56,7 +56,7 @@ export default function Navbar() {
             {COMPANY.email}
           </a>
           <a
-            href={waLink('Hi BizGrowUp! I would like to book a free consultation call.')}
+            href={waLink('Hi GoBizLive! I would like to book a free consultation call.')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -98,7 +98,7 @@ export default function Navbar() {
                 {COMPANY.email}
               </a>
               <a
-                href={waLink('Hi BizGrowUp! I would like to book a free consultation call.')}
+                href={waLink('Hi GoBizLive! I would like to book a free consultation call.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary w-full"

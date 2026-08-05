@@ -1,8 +1,8 @@
 export const COMPANY = {
-  name: 'BizGrowUp',
+  name: 'GoBizLive',
   whatsappNumber: '918460534210',
   whatsappDisplay: '+91 8460534210',
-  email: 'bizzgrowup.contact@gmail.com',
+  email: 'gobizlive.contact@gmail.com',
 };
 
 export function waLink(message: string): string {

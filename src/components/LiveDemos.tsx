@@ -95,7 +95,7 @@ export default function LiveDemos() {
               <span className="h-3 w-3 rounded-full bg-red-400/70" />
               <span className="h-3 w-3 rounded-full bg-yellow-400/70" />
               <span className="h-3 w-3 rounded-full bg-green-400/70" />
-              <span className="ml-3 text-xs text-slate-500">bizgrowup.demo / {active}</span>
+              <span className="ml-3 text-xs text-slate-500">gobizlive.demo / {active}</span>
             </div>
             <div className="flex justify-center rounded-xl bg-ink-950 p-4 sm:p-6">
               <div

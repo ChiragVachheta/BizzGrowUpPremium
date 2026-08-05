@@ -53,7 +53,7 @@ export default function Contact() {
       formData.append('phone', payload.phone);
       formData.append('email', payload.email);
       formData.append('requirements', payload.requirements);
-      formData.append('_subject', `New enquiry from ${payload.business_name} — BizGrowUp`);
+      formData.append('_subject', `New enquiry from ${payload.business_name} — GoBizLive`);
       formData.append('_template', 'table');
 
       fetch(`https://formsubmit.co/ajax/${COMPANY.email}`, {
@@ -91,7 +91,7 @@ export default function Contact() {
 
             <div className="mt-8 space-y-4">
               <a
-                href={waLink('Hi BizGrowUp! I have a question about getting a website.')}
+                href={waLink('Hi GoBizLive! I have a question about getting a website.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-xl border border-white/10 bg-ink-850/80 p-4 transition-colors hover:border-brand-400/40"

@@ -40,7 +40,7 @@ export default function Hero() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href={waLink('Hi BizGrowUp! I would like a free website mockup for my business.')}
+              href={waLink('Hi GoBizLive! I would like a free website mockup for my business.')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost w-full sm:w-auto"
