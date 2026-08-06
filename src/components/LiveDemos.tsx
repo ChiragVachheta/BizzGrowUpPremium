@@ -31,7 +31,7 @@ export default function LiveDemos() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Interactive Previews</span>
           <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Live Client Demos
+            Interactive Live Client Demos
           </h2>
           <p className="mt-4 text-lg text-slate-400">
             Toggle between real client-style templates and preview them across devices. This is the kind of site your business could have.
@@ -56,6 +56,7 @@ export default function LiveDemos() {
                   className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
                     isActive ? 'bg-brand-500 text-ink-950' : 'bg-white/10 text-slate-300'
                   }`}
+                  aria-hidden="true"
                 >
                   <t.icon className="h-5 w-5" />
                 </span>
@@ -82,7 +83,7 @@ export default function LiveDemos() {
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <d.icon className="h-4 w-4" />
+              <d.icon className="h-4 w-4" aria-hidden="true" />
               <span className="hidden sm:inline">{d.label}</span>
             </button>
           ))}
@@ -92,9 +93,9 @@ export default function LiveDemos() {
         <div className="mt-8 mx-auto max-w-5xl">
           <div className="card-surface overflow-hidden p-3 sm:p-5 shadow-card">
             <div className="flex items-center gap-1.5 px-2 pb-3">
-              <span className="h-3 w-3 rounded-full bg-red-400/70" />
-              <span className="h-3 w-3 rounded-full bg-yellow-400/70" />
-              <span className="h-3 w-3 rounded-full bg-green-400/70" />
+              <span className="h-3 w-3 rounded-full bg-red-400/70" aria-hidden="true" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400/70" aria-hidden="true" />
+              <span className="h-3 w-3 rounded-full bg-green-400/70" aria-hidden="true" />
               <span className="ml-3 text-xs text-slate-500">gobizlive.demo / {active}</span>
             </div>
             <div className="flex justify-center rounded-xl bg-ink-950 p-4 sm:p-6">
@@ -106,6 +107,8 @@ export default function LiveDemos() {
                     ? 'w-[560px] max-w-full'
                     : 'w-[300px] max-w-full'
                 }`}
+                role="img"
+                aria-label={`GoBizLive ${active} website template preview on ${device} view`}
               >
                 <TemplatePreview id={active} />
               </div>
@@ -130,7 +133,7 @@ function CafeTemplate() {
       <div className="relative h-28 sm:h-36 bg-gradient-to-br from-amber-700/60 to-amber-950/80">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,200,120,0.25),transparent_60%)]" />
         <div className="absolute bottom-3 left-4 flex items-center gap-2">
-          <Coffee className="h-6 w-6 text-amber-300" />
+          <Coffee className="h-6 w-6 text-amber-300" aria-hidden="true" />
           <span className="font-display text-lg font-bold tracking-tight">Brew &amp; Co.</span>
         </div>
         <nav className="absolute top-3 right-4 hidden sm:flex gap-4 text-xs text-amber-100/80">
@@ -144,7 +147,7 @@ function CafeTemplate() {
         <div className="mt-3 grid grid-cols-3 gap-2">
           {['Espresso', 'Cappuccino', 'Croissant'].map((m) => (
             <div key={m} className="rounded-lg bg-white/5 p-2 text-center">
-              <div className="mx-auto mb-1 h-8 w-8 rounded-full bg-amber-700/40" />
+              <div className="mx-auto mb-1 h-8 w-8 rounded-full bg-amber-700/40" role="img" aria-label={`GoBizLive cafe ${m} menu item`} />
               <span className="text-[10px] text-amber-100/80">{m}</span>
             </div>
           ))}
@@ -163,7 +166,7 @@ function ServicesTemplate() {
     <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0c1a14] text-white">
       <div className="flex items-center justify-between bg-emerald-600/20 px-4 py-3">
         <div className="flex items-center gap-2">
-          <Wrench className="h-5 w-5 text-emerald-400" />
+          <Wrench className="h-5 w-5 text-emerald-400" aria-hidden="true" />
           <span className="font-display text-base font-bold">FixIt Pros</span>
         </div>
         <span className="rounded-full bg-emerald-500/20 px-2.5 py-1 text-[10px] font-semibold text-emerald-300">
@@ -199,7 +202,7 @@ function RetailTemplate() {
     <div className="overflow-hidden rounded-xl border border-white/10 bg-[#1a1024] text-white">
       <div className="px-4 py-3 border-b border-white/10">
         <div className="flex items-center gap-2">
-          <ShoppingBag className="h-5 w-5 text-fuchsia-400" />
+          <ShoppingBag className="h-5 w-5 text-fuchsia-400" aria-hidden="true" />
           <span className="font-display text-base font-bold">Loom &amp; Lace</span>
         </div>
         <p className="mt-1 text-[11px] text-fuchsia-200/70">Handpicked boutique fashion</p>
@@ -212,7 +215,7 @@ function RetailTemplate() {
           { n: 'Wool Scarf', p: '₹699' },
         ].map((p) => (
           <div key={p.n} className="rounded-lg bg-white/5 p-2">
-            <div className="mb-1.5 h-16 rounded-md bg-gradient-to-br from-fuchsia-600/40 to-purple-800/40" />
+            <div className="mb-1.5 h-16 rounded-md bg-gradient-to-br from-fuchsia-600/40 to-purple-800/40" role="img" aria-label={`GoBizLive retail ${p.n} product preview`} />
             <span className="block text-[11px] font-medium text-fuchsia-100/90">{p.n}</span>
             <span className="text-[11px] font-semibold text-fuchsia-400">{p.p}</span>
           </div>

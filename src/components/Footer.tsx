@@ -9,8 +9,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#top" className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600">
-                <Sparkles className="h-5 w-5 text-ink-950" />
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600" aria-hidden="true">
+                <Sparkles className="h-5 w-5 text-ink-950" aria-hidden="true" />
               </span>
               <span className="font-display text-xl font-extrabold tracking-tight text-white">
                 Go<span className="text-brand-400">BizLive</span>
@@ -46,7 +46,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-300"
                 >
-                  <MessageCircle className="h-4 w-4 text-brand-400" />
+                  <MessageCircle className="h-4 w-4 text-brand-400" aria-hidden="true" />
                   {COMPANY.whatsappDisplay}
                 </a>
               </li>
@@ -55,7 +55,7 @@ export default function Footer() {
                   href={`mailto:${COMPANY.email}`}
                   className="flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-accent-300"
                 >
-                  <Mail className="h-4 w-4 text-accent-400" />
+                  <Mail className="h-4 w-4 text-accent-400" aria-hidden="true" />
                   <span className="break-all">{COMPANY.email}</span>
                 </a>
               </li>
@@ -72,7 +72,7 @@ export default function Footer() {
             className="inline-flex items-center gap-1.5 text-xs text-slate-400 transition-colors hover:text-white"
           >
             Back to top
-            <ArrowUp className="h-3.5 w-3.5" />
+            <ArrowUp className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
         </div>
       </div>

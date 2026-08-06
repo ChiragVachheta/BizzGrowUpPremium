@@ -44,7 +44,7 @@ export default function Pricing() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Transparent Pricing</span>
           <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Clear, Upfront Packages
+            Transparent Web Design Packages for Small Businesses
           </h2>
           <p className="mt-4 text-lg text-slate-400">
             No hidden fees, no surprises. Pick the package that fits your business — pay once, own it forever.
@@ -66,8 +66,8 @@ export default function Pricing() {
                 </span>
               )}
               <div className="flex items-center gap-3">
-                <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${p.featured ? 'bg-brand-500 text-ink-950' : 'bg-white/10 text-brand-300'}`}>
-                  <p.icon className="h-5 w-5" />
+                <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${p.featured ? 'bg-brand-500 text-ink-950' : 'bg-white/10 text-brand-300'}`} aria-hidden="true">
+                  <p.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="font-display text-lg font-bold text-white">{p.name}</h3>
               </div>
@@ -79,7 +79,7 @@ export default function Pricing() {
               <ul className="mt-6 space-y-3 flex-1">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" aria-hidden="true" />
                     {f}
                   </li>
                 ))}
@@ -91,7 +91,7 @@ export default function Pricing() {
                 className={`mt-7 ${p.featured ? 'btn-primary' : 'btn-ghost'}`}
               >
                 Get Started
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
           ))}
@@ -101,8 +101,8 @@ export default function Pricing() {
         <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-ink-800 to-ink-850">
           <div className="grid items-center gap-6 p-7 sm:p-9 lg:grid-cols-[1fr_auto]">
             <div className="flex items-start gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-500/15 text-accent-400">
-                <RefreshCw className="h-6 w-6" />
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-500/15 text-accent-400" aria-hidden="true">
+                <RefreshCw className="h-6 w-6" aria-hidden="true" />
               </span>
               <div>
                 <h3 className="font-display text-lg font-bold text-white">

@@ -34,8 +34,8 @@ export default function Services() {
               }`}
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400 transition-colors group-hover:bg-brand-500 group-hover:text-ink-950">
-                <s.icon className="h-6 w-6" />
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400 transition-colors group-hover:bg-brand-500 group-hover:text-ink-950" aria-hidden="true">
+                <s.icon className="h-6 w-6" aria-hidden="true" />
               </span>
               <h3 className="mt-4 font-display text-lg font-bold text-white">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.desc}</p>

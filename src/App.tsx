@@ -4,6 +4,7 @@ import Services from '@/components/Services';
 import LiveDemos from '@/components/LiveDemos';
 import Pricing from '@/components/Pricing';
 import Process from '@/components/Process';
+import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsAppWidget from '@/components/WhatsAppWidget';
@@ -18,6 +19,7 @@ export default function App() {
         <LiveDemos />
         <Pricing />
         <Process />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

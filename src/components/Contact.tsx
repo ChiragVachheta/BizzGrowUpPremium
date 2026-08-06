@@ -96,8 +96,8 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-xl border border-white/10 bg-ink-850/80 p-4 transition-colors hover:border-brand-400/40"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400">
-                  <MessageCircle className="h-6 w-6" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400" aria-hidden="true">
+                  <MessageCircle className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-slate-500">WhatsApp</p>
@@ -111,8 +111,8 @@ export default function Contact() {
                 href={`mailto:${COMPANY.email}`}
                 className="group flex items-center gap-4 rounded-xl border border-white/10 bg-ink-850/80 p-4 transition-colors hover:border-accent-400/40"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-500/15 text-accent-400">
-                  <Mail className="h-6 w-6" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-500/15 text-accent-400" aria-hidden="true">
+                  <Mail className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <div className="min-w-0">
                   <p className="text-xs uppercase tracking-wider text-slate-500">Email</p>
@@ -123,8 +123,8 @@ export default function Contact() {
               </a>
 
               <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-ink-850/80 p-4">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-slate-200">
-                  <Phone className="h-6 w-6" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-slate-200" aria-hidden="true">
+                  <Phone className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-slate-500">Phone</p>
@@ -138,7 +138,7 @@ export default function Contact() {
           <div className="card-surface p-6 sm:p-8 shadow-card">
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <CheckCircle2 className="h-14 w-14 text-brand-400" />
+                <CheckCircle2 className="h-14 w-14 text-brand-400" aria-hidden="true" />
                 <h3 className="mt-4 font-display text-xl font-bold text-white">Message Sent!</h3>
                 <p className="mt-2 text-sm text-slate-400">
                   Thanks for reaching out. We'll get back to you within 24 hours.
@@ -202,7 +202,7 @@ export default function Contact() {
 
                 {status === 'error' && (
                   <div className="flex items-center gap-2.5 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
-                    <AlertCircle className="h-4 w-4 shrink-0" />
+                    <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
                     Something went wrong. Please try again or message us on WhatsApp.
                   </div>
                 )}
@@ -214,12 +214,12 @@ export default function Contact() {
                 >
                   {status === 'loading' ? (
                     <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                       Sending...
                     </>
                   ) : (
                     <>
-                      <Send className="h-4 w-4" />
+                      <Send className="h-4 w-4" aria-hidden="true" />
                       Send Message
                     </>
                   )}

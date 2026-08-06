@@ -24,8 +24,8 @@ export default function Navbar() {
       <nav className="container-px flex h-20 items-center justify-between gap-4">
         {/* Logo */}
         <a href="#top" className="flex items-center gap-2.5 shrink-0">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-glow">
-            <Sparkles className="h-5 w-5 text-ink-950" />
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-glow" aria-hidden="true">
+            <Sparkles className="h-5 w-5 text-ink-950" aria-hidden="true" />
           </span>
           <span className="font-display text-xl font-extrabold tracking-tight text-white">
             Go<span className="text-brand-400">BizLive</span>
@@ -52,7 +52,7 @@ export default function Navbar() {
             href={`mailto:${COMPANY.email}`}
             className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3.5 py-2 text-sm font-medium text-slate-200 transition-colors hover:border-white/25 hover:text-white"
           >
-            <span className="h-2 w-2 rounded-full bg-brand-400" />
+            <span className="h-2 w-2 rounded-full bg-brand-400" aria-hidden="true" />
             {COMPANY.email}
           </a>
           <a
@@ -71,7 +71,7 @@ export default function Navbar() {
           className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white"
           aria-label="Toggle menu"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
         </button>
       </nav>
 

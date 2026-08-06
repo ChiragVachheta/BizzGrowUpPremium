@@ -14,5 +14,6 @@ export const NAV_LINKS = [
   { label: 'Live Demos', href: '#demos' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Process', href: '#process' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];

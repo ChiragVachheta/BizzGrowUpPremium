@@ -27,7 +27,7 @@ export default function Process() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">How It Works</span>
           <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            A Simple, Proven Process
+            Simple 3-Step Launch Process
           </h2>
           <p className="mt-4 text-lg text-slate-400">
             Three steps from first conversation to a launched website. No jargon, no delays.
@@ -47,7 +47,7 @@ export default function Process() {
               style={{ transitionDelay: `${i * 120}ms` }}
             >
               <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-2xl border border-white/10 bg-ink-850 shadow-card">
-                <s.icon className="h-9 w-9 text-brand-400" />
+                <s.icon className="h-9 w-9 text-brand-400" aria-hidden="true" />
                 <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-brand-500 text-xs font-bold text-ink-950">
                   {i + 1}
                 </span>
