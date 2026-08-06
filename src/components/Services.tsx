@@ -2,12 +2,12 @@ import { Zap, Smartphone, Search, ShoppingCart, MessageSquare, ShieldCheck } fro
 import { useReveal } from '@/lib/useReveal';
 
 const SERVICES = [
-  { icon: Zap, title: 'Lightning-Fast Speed', desc: 'Optimized to load in under 2 seconds, so visitors never wait and never bounce.' },
-  { icon: Smartphone, title: 'Mobile-First Design', desc: 'Built for the phone first — where 80% of your local customers actually browse.' },
-  { icon: Search, title: 'SEO Foundations', desc: 'On-page SEO baked in so you show up when people nearby search for what you offer.' },
-  { icon: ShoppingCart, title: 'E-Commerce Ready', desc: 'Product catalogs, carts, and checkout — turn visitors into paying customers.' },
-  { icon: MessageSquare, title: 'WhatsApp Integration', desc: 'One-tap chat buttons that turn website visitors into direct conversations.' },
-  { icon: ShieldCheck, title: 'Secure & Maintained', desc: 'Hosting, security, and updates handled for you — your site stays live and safe.' },
+  { icon: Zap, title: 'Lightning-Fast Speed', desc: 'Every site is engineered to load in under two seconds on a 4G connection. We optimize images, minify code, and use modern caching so visitors never wait and never bounce. Faster pages also rank higher on Google, bringing you more organic traffic from local searches.' },
+  { icon: Smartphone, title: 'Mobile-First Design', desc: 'Over 80% of local customers browse on their phones before visiting a store. We design for the phone first, then scale up to tablet and desktop. Every layout is touch-friendly, with tap targets sized for thumbs and text that reads clearly on small screens.' },
+  { icon: Search, title: 'SEO Foundations', desc: 'We bake on-page SEO into every site: clean meta tags, descriptive headings, fast load times, and mobile-friendly markup. This helps your business show up when nearby customers search for the products or services you offer on Google.' },
+  { icon: ShoppingCart, title: 'E-Commerce Ready', desc: 'Turn visitors into paying customers with a full online store. We set up product catalogs with categories, shopping carts, secure checkout, and payment gateway integration. Manage orders easily from a simple dashboard, with or without technical knowledge.' },
+  { icon: MessageSquare, title: 'WhatsApp Integration', desc: 'Add one-tap chat buttons that turn website visitors into direct WhatsApp conversations. Whether a customer wants a quote, a reservation, or a quick question, they can reach you instantly without filling out a form or waiting on email.' },
+  { icon: ShieldCheck, title: 'Secure & Maintained', desc: 'Hosting, SSL security, daily backups, and software updates are all handled for you. Your site stays live, safe, and current without you lifting a finger. If something breaks, we fix it — usually before you even notice.' },
 ];
 
 export default function Services() {
@@ -21,7 +21,7 @@ export default function Services() {
             Everything Your Business Needs Online
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            From a single landing page to a full online store — we handle the design, the speed, and the tech so you don't have to.
+            From a single landing page to a full online store, we handle the design, the speed, and the tech so you do not have to. Every website we build is tailored to how local customers in India discover, browse, and contact businesses like yours — fast, mobile-first, and ready to grow.
           </p>
         </div>
 

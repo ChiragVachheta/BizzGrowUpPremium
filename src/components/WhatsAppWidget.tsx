@@ -27,7 +27,7 @@ export default function WhatsAppWidget() {
                 <p className="text-[11px] text-brand-300">Typically replies in minutes</p>
               </div>
             </div>
-            <button onClick={() => setOpen(false)} className="text-slate-400 hover:text-white" aria-label="Close WhatsApp chat">
+            <button onClick={() => setOpen(false)} className="flex h-12 w-12 items-center justify-center rounded-lg text-slate-400 hover:text-white" aria-label="Close WhatsApp chat">
               <X className="h-4 w-4" aria-hidden="true" />
             </button>
           </div>

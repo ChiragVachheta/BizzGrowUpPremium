@@ -77,13 +77,13 @@ export default function LiveDemos() {
             <button
               key={d.id}
               onClick={() => setDevice(d.id)}
-              className={`inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors ${
+              className={`inline-flex min-h-[48px] items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
                 device === d.id
                   ? 'bg-white/10 text-white'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <d.icon className="h-4 w-4" aria-hidden="true" />
+              <d.icon className="h-5 w-5" aria-hidden="true" />
               <span className="hidden sm:inline">{d.label}</span>
             </button>
           ))}

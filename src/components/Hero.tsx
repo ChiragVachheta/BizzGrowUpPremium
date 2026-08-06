@@ -24,9 +24,9 @@ export default function Hero() {
           </div>
 
           <h1 className="animate-fade-up mt-7 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl" style={{ animationDelay: '60ms' }}>
-            Get a High-Performance Local Business Website Built &amp; Launched in{' '}
+            High-Performance Web Design for{' '}
             <span className="bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent">
-              15 Days
+              Local Businesses
             </span>
           </h1>
 

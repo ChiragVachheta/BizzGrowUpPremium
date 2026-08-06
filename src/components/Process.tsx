@@ -5,17 +5,17 @@ const STEPS = [
   {
     icon: ClipboardList,
     title: 'Share Details',
-    desc: 'Tell us about your business, your goals, and what you need. We listen, ask the right questions, and map out the plan.',
+    desc: 'Tell us about your business, your goals, and what you need. We listen carefully, ask the right questions, and map out a clear plan. You do not need any technical knowledge — just a few minutes to share what makes your business unique and what you want your website to achieve.',
   },
   {
     icon: Eye,
     title: 'Review Prototype',
-    desc: 'Within days, you review a working prototype. We refine it together until every detail feels right to you.',
+    desc: 'Within days, you review a working prototype of your website on a private link. We refine it together based on your feedback — adjusting layouts, colors, and content until every detail feels right to you. No guesswork, no surprises at launch.',
   },
   {
     icon: Rocket,
     title: 'Launch',
-    desc: 'We go live on your domain — fast, mobile-optimized, and ready for customers. All in 15 days or less.',
+    desc: 'We go live on your domain — fast, mobile-optimized, and ready for customers. Your site is submitted to Google, connected to analytics, and handed over with a simple guide so you can update content anytime. All done in 15 days or less, guaranteed.',
   },
 ];
 

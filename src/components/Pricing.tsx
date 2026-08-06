@@ -15,24 +15,24 @@ const PACKAGES: Pkg[] = [
   {
     name: 'Starter Landing Page',
     price: '₹7,000',
-    tagline: 'A fast, focused one-page site to get you online.',
+    tagline: 'A fast, focused one-page site to get you online quickly and affordably.',
     icon: Zap,
-    features: ['1-page responsive site', 'Lightning-fast loading', 'Contact form', 'Mobile-first design', 'Basic SEO setup'],
+    features: ['1-page responsive website', 'Lightning-fast loading under 2 seconds', 'Contact form with validation', 'Mobile-first design for phone and tablet', 'Basic on-page SEO setup (meta tags, headings)', 'Free SSL certificate and secure hosting'],
   },
   {
     name: 'Standard Business Site',
     price: '₹15,000',
-    tagline: 'A complete multi-page presence for growing businesses.',
+    tagline: 'A complete multi-page presence for growing businesses that need more room to tell their story.',
     icon: Layout,
     featured: true,
-    features: ['Multi-page: Home, About, Services, Gallery, Contact', 'WhatsApp chat integration', 'Fast loading & mobile-first', 'Contact form with validation', 'On-page SEO optimization'],
+    features: ['Multi-page: Home, About, Services, Gallery, Contact', 'WhatsApp chat integration with one-tap buttons', 'Fast loading and mobile-first responsive design', 'Contact form with spam protection and validation', 'On-page SEO optimization for local search', 'Free SSL, secure hosting, and 30 days of support'],
   },
   {
     name: 'E-Commerce / Catalog',
     price: '₹28,000',
-    tagline: 'Sell online with a full store and cart workflow.',
+    tagline: 'Sell online with a full store, cart workflow, and payment gateway built in.',
     icon: ShoppingCart,
-    features: ['Online store setup', 'Product lists & categories', 'Cart & checkout workflow', 'Order management', 'Payment gateway integration'],
+    features: ['Online store setup with custom branding', 'Product lists, categories, and search', 'Shopping cart and secure checkout workflow', 'Order management dashboard', 'Payment gateway integration (UPI, cards, net banking)', 'Inventory tracking and email order notifications'],
   },
 ];
 
@@ -47,7 +47,7 @@ export default function Pricing() {
             Transparent Web Design Packages for Small Businesses
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            No hidden fees, no surprises. Pick the package that fits your business — pay once, own it forever.
+            No hidden fees, no recurring surprises. Pick the package that fits your business today — pay once and own the website forever. Every package includes mobile-first design, fast loading, and SEO foundations, so your site works hard for you from day one.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export default function Pricing() {
                   Monthly Maintenance &amp; Updates
                 </h3>
                 <p className="mt-1.5 text-sm text-slate-400">
-                  Includes hosting management, security monitoring, and text updates — so your site stays fast, safe, and current.
+                  Includes hosting management, security monitoring, daily backups, and content updates — so your site stays fast, safe, and current without any effort on your part. Cancel anytime, no lock-in.
                 </p>
               </div>
             </div>
