@@ -1,4 +1,5 @@
-import { Check, Zap, LayoutGrid as Layout, ShoppingCart, RefreshCw, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { Check, Zap, LayoutGrid as Layout, ShoppingCart, RefreshCw, ArrowRight, Info } from 'lucide-react';
 import { waLink } from '@/lib/site';
 import { useReveal } from '@/lib/useReveal';
 
@@ -17,7 +18,17 @@ const PACKAGES: Pkg[] = [
     price: '₹7,000',
     tagline: 'A fast, focused one-page site to get you online quickly and affordably.',
     icon: Zap,
-    features: ['1-page responsive website', 'Lightning-fast loading under 2 seconds', 'Contact form with validation', 'Mobile-first design for phone and tablet', 'Basic on-page SEO setup (meta tags, headings)', 'Free SSL certificate and secure hosting'],
+    features: [
+      '1-page responsive website',
+      'Lightning-fast loading under 2 seconds',
+      'Contact form with validation',
+      'Mobile-first design for phone and tablet',
+      'Technical & Code-Level SEO Built-In',
+      'Domain Registration Assistance (Domain registered in client\'s name so you retain 100% ownership; actual registrar fee ~$10/yr paid directly)',
+      '1 Year High-Speed Cloud Hosting Management Included',
+      'Client-Provided Content Integration (Professional formatting and layout of your provided text and photos)',
+      'Free SSL certificate and secure hosting',
+    ],
   },
   {
     name: 'Standard Business Site',
@@ -25,19 +36,70 @@ const PACKAGES: Pkg[] = [
     tagline: 'A complete multi-page presence for growing businesses that need more room to tell their story.',
     icon: Layout,
     featured: true,
-    features: ['Multi-page: Home, About, Services, Gallery, Contact', 'WhatsApp chat integration with one-tap buttons', 'Fast loading and mobile-first responsive design', 'Contact form with spam protection and validation', 'On-page SEO optimization for local search', 'Free SSL, secure hosting, and 30 days of support'],
+    features: [
+      'Multi-page: Home, About, Services, Gallery, Contact',
+      'WhatsApp chat integration with one-tap buttons',
+      'Fast loading and mobile-first responsive design',
+      'Contact form with spam protection and validation',
+      'Technical & Code-Level SEO Built-In',
+      'Domain Registration Assistance (Domain registered in client\'s name so you retain 100% ownership; actual registrar fee ~$10/yr paid directly)',
+      '1 Year High-Speed Cloud Hosting Management Included',
+      'Client-Provided Content Integration (Professional formatting and layout of your provided text and photos)',
+      'Free SSL, secure hosting, and 30 days of support',
+    ],
   },
   {
     name: 'E-Commerce / Catalog',
     price: '₹28,000',
     tagline: 'Sell online with a full store, cart workflow, and payment gateway built in.',
     icon: ShoppingCart,
-    features: ['Online store setup with custom branding', 'Product lists, categories, and search', 'Shopping cart and secure checkout workflow', 'Order management dashboard', 'Payment gateway integration (UPI, cards, net banking)', 'Inventory tracking and email order notifications'],
+    features: [
+      'Online store setup with custom branding',
+      'Product lists, categories, and search',
+      'Shopping cart and secure checkout workflow',
+      'Order management dashboard',
+      'Payment gateway integration (UPI, cards, net banking)',
+      'Inventory tracking and email order notifications',
+      'Technical & Code-Level SEO Built-In',
+      'Domain Registration Assistance (Domain registered in client\'s name so you retain 100% ownership; actual registrar fee ~$10/yr paid directly)',
+      '1 Year High-Speed Cloud Hosting Management Included',
+      'Client-Provided Content Integration (Professional formatting and layout of your provided text and photos)',
+      'User-Friendly Admin Dashboard: Self-manage, add, or remove products and images anytime with automated cloud backups',
+    ],
   },
 ];
 
+const SEO_NOTE =
+  'Includes schema markup, meta titles/descriptions, OpenGraph tags, XML sitemap, robot.txt, and image alt tags. (Off-page link building is not included).';
+const ADDON_NOTE =
+  'Copywriting, brand photography, and custom graphic design available as separate custom add-ons.';
+
+function FeatureItem({ text }: { text: string }) {
+  const isSeo = text.startsWith('Technical & Code-Level SEO');
+  const isContent = text.startsWith('Client-Provided Content');
+  return (
+    <li className="flex items-start gap-2.5 text-sm text-slate-300">
+      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" aria-hidden="true" />
+      <span>
+        {text}
+        {isSeo && (
+          <span className="mt-1 block rounded-lg border border-white/10 bg-ink-950/60 px-2.5 py-1.5 text-xs leading-relaxed text-slate-400">
+            <Info className="mr-1 inline h-3 w-3 text-brand-400 align-text-bottom" aria-hidden="true" />
+            {SEO_NOTE}
+          </span>
+        )}
+        {isContent && (
+          <span className="mt-1 block text-xs leading-relaxed text-slate-500">{ADDON_NOTE}</span>
+        )}
+      </span>
+    </li>
+  );
+}
+
 export default function Pricing() {
   const { ref, visible } = useReveal();
+  const [yearly, setYearly] = useState(false);
+
   return (
     <section id="pricing" className="relative py-20 sm:py-28">
       <div className="container-px">
@@ -78,10 +140,7 @@ export default function Pricing() {
               </div>
               <ul className="mt-6 space-y-3 flex-1">
                 {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" aria-hidden="true" />
-                    {f}
-                  </li>
+                  <FeatureItem key={f} text={f} />
                 ))}
               </ul>
               <a
@@ -111,15 +170,68 @@ export default function Pricing() {
                 <p className="mt-1.5 text-sm text-slate-400">
                   Includes hosting management, security monitoring, daily backups, and content updates — so your site stays fast, safe, and current without any effort on your part. Cancel anytime, no lock-in.
                 </p>
+
+                {/* Billing toggle */}
+                <div className="mt-4 inline-flex items-center gap-1 rounded-full border border-white/10 bg-ink-950/60 p-1">
+                  <button
+                    onClick={() => setYearly(false)}
+                    className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+                      !yearly ? 'bg-brand-500 text-ink-950' : 'text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    Monthly Billing
+                  </button>
+                  <button
+                    onClick={() => setYearly(true)}
+                    className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+                      yearly ? 'bg-brand-500 text-ink-950' : 'text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    Yearly Billing (Save 20%)
+                  </button>
+                </div>
+
+                {/* Feature checklist */}
+                <ul className="mt-4 space-y-2">
+                  {[
+                    'Automated Cloud Database & Media Storage Backups (Products, uploaded images, order records)',
+                    'GitHub Codebase & Design Version Control with instant 1-click rollback',
+                    'High-Speed Edge CDN Hosting Management (Sub-2s load speed)',
+                    'Security monitoring, SSL renewal, and package dependency updates',
+                    'Up to 2 content/text/pricing updates per month included',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" aria-hidden="true" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+
             <div className="flex items-center gap-5 lg:flex-col lg:items-end">
               <div className="text-right lg:text-right">
-                <span className="font-display text-3xl font-extrabold text-white">₹1,500</span>
-                <span className="ml-1 text-sm text-slate-500">/month</span>
+                {yearly ? (
+                  <>
+                    <span className="font-display text-3xl font-extrabold text-white">₹14,400</span>
+                    <span className="ml-1 text-sm text-slate-500">/year</span>
+                    <p className="mt-1 text-xs text-slate-400">
+                      Equivalent to <span className="font-semibold text-brand-300">₹1,200/month</span> · Billed annually
+                    </p>
+                    <span className="mt-2 inline-block rounded-full bg-brand-500/15 px-2.5 py-1 text-xs font-semibold text-brand-300">
+                      Best Value — Save ₹3,600/yr
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="font-display text-3xl font-extrabold text-white">₹1,500</span>
+                    <span className="ml-1 text-sm text-slate-500">/month</span>
+                    <p className="mt-1 text-xs text-slate-400">Billed monthly</p>
+                  </>
+                )}
               </div>
               <a
-                href={waLink('Hi GoBizLive! I would like to add the monthly maintenance plan.')}
+                href={waLink(yearly ? 'Hi GoBizLive! I would like to add the yearly maintenance plan.' : 'Hi GoBizLive! I would like to add the monthly maintenance plan.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost whitespace-nowrap"

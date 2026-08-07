@@ -1,17 +1,19 @@
 import { useState } from 'react';
-import { Coffee, Wrench, ShoppingBag, Monitor, Tablet, Smartphone } from 'lucide-react';
+import { Zap, LayoutGrid as Layout, ShoppingCart, Monitor, Tablet, Smartphone, ExternalLink } from 'lucide-react';
+import { useReveal } from '@/lib/useReveal';
 
-type TemplateId = 'cafe' | 'services' | 'retail';
+type TemplateId = 'starter' | 'standard' | 'ecommerce';
 
 const TEMPLATES: {
   id: TemplateId;
   label: string;
   sub: string;
-  icon: typeof Coffee;
+  route: string;
+  icon: typeof Zap;
 }[] = [
-  { id: 'cafe', label: 'Cafe & Restaurant', sub: 'Template A', icon: Coffee },
-  { id: 'services', label: 'Plumber / Electrician', sub: 'Template B', icon: Wrench },
-  { id: 'retail', label: 'Boutique Shop', sub: 'Template C', icon: ShoppingBag },
+  { id: 'starter', label: 'Starter Package', sub: 'Single-page landing', route: '/demo/starter', icon: Zap },
+  { id: 'standard', label: 'Standard Package', sub: 'Multi-page business site', route: '/demo/standard', icon: Layout },
+  { id: 'ecommerce', label: 'E-Commerce Package', sub: 'Full online store', route: '/demo/ecommerce', icon: ShoppingCart },
 ];
 
 type Device = 'desktop' | 'tablet' | 'mobile';
@@ -22,8 +24,10 @@ const DEVICES: { id: Device; label: string; icon: typeof Monitor }[] = [
 ];
 
 export default function LiveDemos() {
-  const [active, setActive] = useState<TemplateId>('cafe');
+  const { ref, visible } = useReveal();
+  const [active, setActive] = useState<TemplateId>('starter');
   const [device, setDevice] = useState<Device>('desktop');
+  const activeTemplate = TEMPLATES.find((t) => t.id === active)!;
 
   return (
     <section id="demos" className="relative py-20 sm:py-28">
@@ -34,11 +38,11 @@ export default function LiveDemos() {
             Interactive Live Client Demos
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            Toggle between real client-style templates and preview them across devices. This is the kind of site your business could have.
+            Explore real, working demos aligned to each pricing package. Preview them across devices, then open the full standalone version in a new tab.
           </p>
         </div>
 
-        {/* Template tabs */}
+        {/* Package tabs */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {TEMPLATES.map((t) => {
             const isActive = active === t.id;
@@ -90,13 +94,13 @@ export default function LiveDemos() {
         </div>
 
         {/* Preview frame */}
-        <div className="mt-8 mx-auto max-w-5xl">
+        <div ref={ref} className={`mt-8 mx-auto max-w-5xl transition-all duration-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="card-surface overflow-hidden p-3 sm:p-5 shadow-card">
             <div className="flex items-center gap-1.5 px-2 pb-3">
               <span className="h-3 w-3 rounded-full bg-red-400/70" aria-hidden="true" />
               <span className="h-3 w-3 rounded-full bg-yellow-400/70" aria-hidden="true" />
               <span className="h-3 w-3 rounded-full bg-green-400/70" aria-hidden="true" />
-              <span className="ml-3 text-xs text-slate-500">gobizlive.demo / {active}</span>
+              <span className="ml-3 truncate text-xs text-slate-500">gobizlive.demo / {active}</span>
             </div>
             <div className="flex justify-center rounded-xl bg-ink-950 p-4 sm:p-6">
               <div
@@ -108,11 +112,24 @@ export default function LiveDemos() {
                     : 'w-[300px] max-w-full'
                 }`}
                 role="img"
-                aria-label={`GoBizLive ${active} website template preview on ${device} view`}
+                aria-label={`GoBizLive ${active} package website template preview on ${device} view`}
               >
                 <TemplatePreview id={active} />
               </div>
             </div>
+          </div>
+
+          {/* Open full demo button */}
+          <div className="mt-5 flex justify-center">
+            <a
+              href={activeTemplate.route}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              Open Full Live Demo in New Tab
+            </a>
           </div>
         </div>
       </div>
@@ -121,19 +138,19 @@ export default function LiveDemos() {
 }
 
 function TemplatePreview({ id }: { id: TemplateId }) {
-  if (id === 'cafe') return <CafeTemplate />;
-  if (id === 'services') return <ServicesTemplate />;
-  return <RetailTemplate />;
+  if (id === 'starter') return <StarterPreview />;
+  if (id === 'standard') return <StandardPreview />;
+  return <EcommercePreview />;
 }
 
-/* ---------- Cafe ---------- */
-function CafeTemplate() {
+/* ---------- Starter: single-page landing ---------- */
+function StarterPreview() {
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-[#1a120b] text-white">
       <div className="relative h-28 sm:h-36 bg-gradient-to-br from-amber-700/60 to-amber-950/80">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,200,120,0.25),transparent_60%)]" />
         <div className="absolute bottom-3 left-4 flex items-center gap-2">
-          <Coffee className="h-6 w-6 text-amber-300" aria-hidden="true" />
+          <Zap className="h-6 w-6 text-amber-300" aria-hidden="true" />
           <span className="font-display text-lg font-bold tracking-tight">Brew &amp; Co.</span>
         </div>
         <nav className="absolute top-3 right-4 hidden sm:flex gap-4 text-xs text-amber-100/80">
@@ -147,7 +164,7 @@ function CafeTemplate() {
         <div className="mt-3 grid grid-cols-3 gap-2">
           {['Espresso', 'Cappuccino', 'Croissant'].map((m) => (
             <div key={m} className="rounded-lg bg-white/5 p-2 text-center">
-              <div className="mx-auto mb-1 h-8 w-8 rounded-full bg-amber-700/40" role="img" aria-label={`GoBizLive cafe ${m} menu item`} />
+              <div className="mx-auto mb-1 h-8 w-8 rounded-full bg-amber-700/40" role="img" aria-label={`GoBizLive starter ${m} menu item`} />
               <span className="text-[10px] text-amber-100/80">{m}</span>
             </div>
           ))}
@@ -160,15 +177,18 @@ function CafeTemplate() {
   );
 }
 
-/* ---------- Services ---------- */
-function ServicesTemplate() {
+/* ---------- Standard: multi-page business ---------- */
+function StandardPreview() {
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0c1a14] text-white">
       <div className="flex items-center justify-between bg-emerald-600/20 px-4 py-3">
         <div className="flex items-center gap-2">
-          <Wrench className="h-5 w-5 text-emerald-400" aria-hidden="true" />
+          <Layout className="h-5 w-5 text-emerald-400" aria-hidden="true" />
           <span className="font-display text-base font-bold">FixIt Pros</span>
         </div>
+        <span className="hidden gap-3 text-[10px] text-emerald-100/70 sm:flex">
+          <span>Home</span><span>About</span><span>Services</span><span>Gallery</span><span>Contact</span>
+        </span>
         <span className="rounded-full bg-emerald-500/20 px-2.5 py-1 text-[10px] font-semibold text-emerald-300">
           Available Today
         </span>
@@ -196,16 +216,18 @@ function ServicesTemplate() {
   );
 }
 
-/* ---------- Retail ---------- */
-function RetailTemplate() {
+/* ---------- E-Commerce: online store ---------- */
+function EcommercePreview() {
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-[#1a1024] text-white">
-      <div className="px-4 py-3 border-b border-white/10">
+      <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <div className="flex items-center gap-2">
-          <ShoppingBag className="h-5 w-5 text-fuchsia-400" aria-hidden="true" />
+          <ShoppingCart className="h-5 w-5 text-fuchsia-400" aria-hidden="true" />
           <span className="font-display text-base font-bold">Loom &amp; Lace</span>
         </div>
-        <p className="mt-1 text-[11px] text-fuchsia-200/70">Handpicked boutique fashion</p>
+        <span className="rounded-full bg-fuchsia-500/20 px-2.5 py-1 text-[10px] font-semibold text-fuchsia-300">
+          Cart · 0
+        </span>
       </div>
       <div className="p-3 grid grid-cols-2 gap-2">
         {[
@@ -215,7 +237,7 @@ function RetailTemplate() {
           { n: 'Wool Scarf', p: '₹699' },
         ].map((p) => (
           <div key={p.n} className="rounded-lg bg-white/5 p-2">
-            <div className="mb-1.5 h-16 rounded-md bg-gradient-to-br from-fuchsia-600/40 to-purple-800/40" role="img" aria-label={`GoBizLive retail ${p.n} product preview`} />
+            <div className="mb-1.5 h-16 rounded-md bg-gradient-to-br from-fuchsia-600/40 to-purple-800/40" role="img" aria-label={`GoBizLive ecommerce ${p.n} product preview`} />
             <span className="block text-[11px] font-medium text-fuchsia-100/90">{p.n}</span>
             <span className="text-[11px] font-semibold text-fuchsia-400">{p.p}</span>
           </div>

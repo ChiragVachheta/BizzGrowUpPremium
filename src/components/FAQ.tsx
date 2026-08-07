@@ -11,7 +11,7 @@ const FAQS: QA[] = [
   },
   {
     q: 'What is included in the ₹7,000 Starter Landing Page package?',
-    a: 'The Starter package includes a one-page responsive website, lightning-fast loading, a contact form, mobile-first design, and basic SEO setup. It is ideal for small local businesses that need a quick, professional online presence.',
+    a: 'The Starter package includes a one-page responsive website, lightning-fast loading, a contact form, mobile-first design, and Technical & Code-Level SEO built in. It is ideal for small local businesses that need a quick, professional online presence.',
   },
   {
     q: 'Do you build websites for cafes, contractors, and retail shops?',
@@ -23,11 +23,27 @@ const FAQS: QA[] = [
   },
   {
     q: 'What happens after my website is launched?',
-    a: 'You own the website outright. For ongoing peace of mind, you can add the monthly maintenance plan (₹1,500/month) which covers hosting management, security monitoring, and content updates.',
+    a: 'You own the website outright. For ongoing peace of mind, you can add the monthly maintenance plan (₹1,500/month or ₹14,400/year) which covers hosting management, security monitoring, automated backups, and content updates.',
   },
   {
     q: 'How do I get started with GoBizLive?',
     a: 'Send us a message through the contact form or chat with us on WhatsApp. Tell us about your business and goals, and we will send a free website mockup within 24 hours — no commitment required.',
+  },
+  {
+    q: 'Are domain name and hosting charges included in the package?',
+    a: 'We manage your high-speed cloud hosting infrastructure. For domain names, we assist you in purchasing your domain directly under your own account on Namecheap or GoDaddy so you maintain 100% legal ownership of your web address.',
+  },
+  {
+    q: 'What kind of SEO is included with my website?',
+    a: 'All packages include complete Technical and On-Page Code-Level SEO (fast load speeds, semantic HTML structure, mobile optimization, meta tags, sitemap, and Google Search Console indexing). Ongoing off-page keyword ranking or backlink campaigns are separate marketing services.',
+  },
+  {
+    q: 'Is content writing or logo design included?',
+    a: 'We format and structure all the business details, menu items, and photos you provide us. If you need professional content writing, logo design, or stock photography, we offer tailored add-on packages to match your needs.',
+  },
+  {
+    q: 'How do product image uploads and database backups work for E-Commerce stores?',
+    a: 'Your E-Commerce site includes a simple Admin Panel where you can log in to upload product images, change prices, and manage stock. All product catalogs, customer leads, and uploaded photos are automatically backed up to secure cloud database storage.',
   },
 ];
 
