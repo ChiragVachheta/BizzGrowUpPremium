@@ -23,9 +23,10 @@ export default function Navbar() {
     >
       <nav className="container-px flex h-20 items-center justify-between gap-4">
         {/* Logo */}
-        <a href="#top" className="flex items-center gap-2.5 shrink-0">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-glow" aria-hidden="true">
-            <Sparkles className="h-5 w-5 text-ink-950" aria-hidden="true" />
+        <a href="#top" className="flex items-center shrink-0">
+          <span className="flex h-20 w-20 items-center justify-center rounded-xl bg-gradient from-brand-400 to-brand-600 " aria-hidden="true">
+          <img src="Gblogo.png" alt="" />
+          {/* <Sparkles className="h-5 w-5 text-ink-950" aria-hidden="true" /> */}
           </span>
           <span className="font-display text-xl font-extrabold tracking-tight text-white">
             Go<span className="text-brand-400">BizLive</span>
