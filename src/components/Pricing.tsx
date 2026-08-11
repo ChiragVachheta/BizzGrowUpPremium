@@ -149,7 +149,7 @@ export default function Pricing() {
                 rel="noopener noreferrer"
                 className={`mt-7 ${p.featured ? 'btn-primary' : 'btn-ghost'}`}
               >
-                Get Started
+                Get Business Website
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>

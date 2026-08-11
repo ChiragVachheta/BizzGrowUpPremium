@@ -25,7 +25,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#top" className="flex items-center shrink-0">
           <span className="flex h-20 w-20 items-center justify-center rounded-xl bg-gradient from-brand-400 to-brand-600 " aria-hidden="true">
-          <img src="Gblogo.png" alt="" />
+          <img src="Gblogo.png" alt="GoBizLive web design agency developing custom web applications and business websites" />
           {/* <Sparkles className="h-5 w-5 text-ink-950" aria-hidden="true" /> */}
           </span>
           <span className="font-display text-xl font-extrabold tracking-tight text-white">
@@ -57,12 +57,12 @@ export default function Navbar() {
             {COMPANY.email}
           </a>
           <a
-            href={waLink('Hi GoBizLive! I would like to book a free consultation call.')}
+            href={waLink('Hi GoBizLive! I would like to request a web app quote.')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Book a Free Call
+            Request Web App Quote
           </a>
         </div>
 
@@ -99,13 +99,13 @@ export default function Navbar() {
                 {COMPANY.email}
               </a>
               <a
-                href={waLink('Hi GoBizLive! I would like to book a free consultation call.')}
+                href={waLink('Hi GoBizLive! I would like to request a web app quote.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary w-full"
                 onClick={() => setOpen(false)}
               >
-                Book a Free Call
+                Request Web App Quote
               </a>
             </div>
           </div>

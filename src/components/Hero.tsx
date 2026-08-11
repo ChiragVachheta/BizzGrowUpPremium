@@ -24,14 +24,14 @@ export default function Hero() {
           </div>
 
           <h1 className="animate-fade-up mt-7 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl" style={{ animationDelay: '60ms' }}>
-            High-Performance Web Design for{' '}
+            High-Performance Websites &amp;{' '}
             <span className="bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent">
-              Local Businesses
+              Custom Web Application Development Agency
             </span>
           </h1>
 
           <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400" style={{ animationDelay: '120ms' }}>
-            Lightning-fast speed, flawless mobile optimization, and zero hassle. We design, build, and launch modern websites for local businesses — so you can focus on your customers, not your code.
+            Looking to develop a website or create a custom web app? GoBizLive is a full-service web design agency building fast, mobile-first websites, SaaS portals, and e-commerce solutions for local businesses and growing brands.
           </p>
 
           <div className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row" style={{ animationDelay: '180ms' }}>
@@ -45,7 +45,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="btn-ghost w-full sm:w-auto"
             >
-              Get Your Free Website Mockup
+              Get Business Website
             </a>
           </div>
 

@@ -1,7 +1,8 @@
-import { Zap, Smartphone, Search, ShoppingCart, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Zap, Smartphone, Search, ShoppingCart, MessageSquare, ShieldCheck, Code2 } from 'lucide-react';
 import { useReveal } from '@/lib/useReveal';
 
 const SERVICES = [
+  { icon: Code2, title: 'Custom Web Application & Portal Development', desc: 'We build custom web apps, interactive client dashboards, SaaS prototypes, and automated business web tools tailored to your exact business workflow.' },
   { icon: Zap, title: 'Lightning-Fast Speed', desc: 'Every site is engineered to load in under two seconds on a 4G connection. We optimize images, minify code, and use modern caching so visitors never wait and never bounce. Faster pages also rank higher on Google, bringing you more organic traffic from local searches.' },
   { icon: Smartphone, title: 'Mobile-First Design', desc: 'Over 80% of local customers browse on their phones before visiting a store. We design for the phone first, then scale up to tablet and desktop. Every layout is touch-friendly, with tap targets sized for thumbs and text that reads clearly on small screens.' },
   { icon: Search, title: 'SEO Foundations', desc: 'We bake on-page SEO into every site: clean meta tags, descriptive headings, fast load times, and mobile-friendly markup. This helps your business show up when nearby customers search for the products or services you offer on Google.' },
@@ -31,14 +32,18 @@ export default function Services() {
               key={s.title}
               className={`card-surface group p-6 transition-all duration-500 hover:border-brand-400/30 hover:bg-ink-800/80 ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
+              } ${i === 0 ? 'sm:col-span-2 lg:col-span-3 border-brand-400/40 bg-brand-500/[0.06]' : ''}`}
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400 transition-colors group-hover:bg-brand-500 group-hover:text-ink-950" aria-hidden="true">
-                <s.icon className="h-6 w-6" aria-hidden="true" />
-              </span>
-              <h3 className="mt-4 font-display text-lg font-bold text-white">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.desc}</p>
+              <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400 transition-colors group-hover:bg-brand-500 group-hover:text-ink-950" aria-hidden="true">
+                  <s.icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <div>
+                  <h3 className="mt-4 sm:mt-0 font-display text-lg font-bold text-white">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.desc}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
