@@ -203,7 +203,7 @@ export default function Pricing() {
                       yearly ? 'bg-brand-500 text-ink-950' : 'text-slate-300 hover:text-white'
                     }`}
                   >
-                    Yearly Billing (Save 20%)
+                    Yearly Billing
                   </button>
                 </div>
 
@@ -229,32 +229,13 @@ export default function Pricing() {
               <div className="text-right lg:text-right">
                 {yearly ? (
                   <>
-                    <div className="flex items-center justify-end gap-2">
-                      <span className="font-display text-base font-semibold text-slate-500 line-through decoration-red-400/60 decoration-2">₹14,400</span>
-                      <span className="inline-flex items-center rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-bold text-red-300">
-                        Save ₹3,600/yr
-                      </span>
-                    </div>
-                    <span className="mt-1 block font-display text-3xl font-extrabold text-brand-300">₹7,200</span>
-                    <span className="ml-1 text-sm text-slate-500">/year</span>
-                    <p className="mt-1 text-xs text-slate-400">
-                      Equivalent to <span className="font-semibold text-brand-300">₹600/month</span> · Billed annually
-                    </p>
-                    <span className="mt-2 inline-block rounded-full bg-brand-500/15 px-2.5 py-1 text-xs font-semibold text-brand-300">
-                      Best Value — Save ₹10,800/yr vs monthly
-                    </span>
+                    <span className="block font-display text-3xl font-extrabold text-brand-300">₹4,800</span>
+                    <span className="ml-1 text-sm text-slate-500">/year (₹400/month) · Billed annually</span>
                   </>
                 ) : (
                   <>
-                    <div className="flex items-center justify-end gap-2">
-                      <span className="font-display text-base font-semibold text-slate-500 line-through decoration-red-400/60 decoration-2">₹1,500</span>
-                      <span className="inline-flex items-center rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-bold text-red-300">
-                        Save ₹1,000
-                      </span>
-                    </div>
-                    <span className="mt-1 block font-display text-3xl font-extrabold text-brand-300">₹500</span>
-                    <span className="ml-1 text-sm text-slate-500">/month</span>
-                    <p className="mt-1 text-xs text-slate-400">Billed monthly</p>
+                    <span className="block font-display text-3xl font-extrabold text-brand-300">₹500</span>
+                    <span className="ml-1 text-sm text-slate-500">/month · Billed monthly</span>
                   </>
                 )}
               </div>
