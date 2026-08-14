@@ -5,7 +5,9 @@ import { useReveal } from '@/lib/useReveal';
 
 type Pkg = {
   name: string;
-  price: string;
+  originalPrice: string;
+  discountedPrice: string;
+  savings: string;
   tagline: string;
   features: string[];
   icon: typeof Zap;
@@ -15,7 +17,9 @@ type Pkg = {
 const PACKAGES: Pkg[] = [
   {
     name: 'Starter Landing Page',
-    price: '₹7,000',
+    originalPrice: '₹7,000',
+    discountedPrice: '₹5,000',
+    savings: 'Save ₹2,000',
     tagline: 'A fast, focused one-page site to get you online quickly and affordably.',
     icon: Zap,
     features: [
@@ -32,7 +36,9 @@ const PACKAGES: Pkg[] = [
   },
   {
     name: 'Standard Business Site',
-    price: '₹15,000',
+    originalPrice: '₹15,000',
+    discountedPrice: '₹8,000',
+    savings: 'Save ₹7,000',
     tagline: 'A complete multi-page presence for growing businesses that need more room to tell their story.',
     icon: Layout,
     featured: true,
@@ -50,7 +56,9 @@ const PACKAGES: Pkg[] = [
   },
   {
     name: 'E-Commerce / Catalog',
-    price: '₹28,000',
+    originalPrice: '₹28,000',
+    discountedPrice: '₹15,000',
+    savings: 'Save ₹13,000',
     tagline: 'Sell online with a full store, cart workflow, and payment gateway built in.',
     icon: ShoppingCart,
     features: [
@@ -104,9 +112,9 @@ export default function Pricing() {
     <section id="pricing" className="relative py-20 sm:py-28">
       <div className="container-px">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Transparent Pricing</span>
+          <span className="eyebrow">Limited-Time Offer</span>
           <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Transparent Web Design Packages for Small Businesses
+            Discounted Web Design Packages for Small Businesses
           </h2>
           <p className="mt-4 text-lg text-slate-400">
             No hidden fees, no recurring surprises. Pick the package that fits your business today — pay once and own the website forever. Every package includes mobile-first design, fast loading, and SEO foundations, so your site works hard for you from day one.
@@ -134,9 +142,17 @@ export default function Pricing() {
                 <h3 className="font-display text-lg font-bold text-white">{p.name}</h3>
               </div>
               <p className="mt-3 text-sm text-slate-400">{p.tagline}</p>
-              <div className="mt-5 flex items-baseline gap-1">
-                <span className="font-display text-4xl font-extrabold text-white">{p.price}</span>
-                <span className="text-sm text-slate-500">one-time</span>
+              <div className="mt-5">
+                <div className="flex items-center gap-2">
+                  <span className="font-display text-lg font-semibold text-slate-500 line-through decoration-red-400/60 decoration-2">{p.originalPrice}</span>
+                  <span className="inline-flex items-center rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-bold text-red-300">
+                    {p.savings}
+                  </span>
+                </div>
+                <div className="mt-1 flex items-baseline gap-1">
+                  <span className="font-display text-4xl font-extrabold text-brand-300">{p.discountedPrice}</span>
+                  <span className="text-sm text-slate-500">one-time</span>
+                </div>
               </div>
               <ul className="mt-6 space-y-3 flex-1">
                 {p.features.map((f) => (
@@ -213,18 +229,30 @@ export default function Pricing() {
               <div className="text-right lg:text-right">
                 {yearly ? (
                   <>
-                    <span className="font-display text-3xl font-extrabold text-white">₹14,400</span>
+                    <div className="flex items-center justify-end gap-2">
+                      <span className="font-display text-base font-semibold text-slate-500 line-through decoration-red-400/60 decoration-2">₹14,400</span>
+                      <span className="inline-flex items-center rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-bold text-red-300">
+                        Save ₹3,600/yr
+                      </span>
+                    </div>
+                    <span className="mt-1 block font-display text-3xl font-extrabold text-brand-300">₹7,200</span>
                     <span className="ml-1 text-sm text-slate-500">/year</span>
                     <p className="mt-1 text-xs text-slate-400">
-                      Equivalent to <span className="font-semibold text-brand-300">₹1,200/month</span> · Billed annually
+                      Equivalent to <span className="font-semibold text-brand-300">₹600/month</span> · Billed annually
                     </p>
                     <span className="mt-2 inline-block rounded-full bg-brand-500/15 px-2.5 py-1 text-xs font-semibold text-brand-300">
-                      Best Value — Save ₹3,600/yr
+                      Best Value — Save ₹10,800/yr vs monthly
                     </span>
                   </>
                 ) : (
                   <>
-                    <span className="font-display text-3xl font-extrabold text-white">₹1,500</span>
+                    <div className="flex items-center justify-end gap-2">
+                      <span className="font-display text-base font-semibold text-slate-500 line-through decoration-red-400/60 decoration-2">₹1,500</span>
+                      <span className="inline-flex items-center rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-bold text-red-300">
+                        Save ₹1,000
+                      </span>
+                    </div>
+                    <span className="mt-1 block font-display text-3xl font-extrabold text-brand-300">₹500</span>
                     <span className="ml-1 text-sm text-slate-500">/month</span>
                     <p className="mt-1 text-xs text-slate-400">Billed monthly</p>
                   </>
