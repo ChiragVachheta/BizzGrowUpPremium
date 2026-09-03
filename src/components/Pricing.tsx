@@ -56,9 +56,9 @@ const PACKAGES: Pkg[] = [
   },
   {
     name: 'E-Commerce / Catalog',
-    originalPrice: '₹28,000',
-    discountedPrice: '₹15,000',
-    savings: 'Save ₹13,000',
+    originalPrice: '₹32,000',
+    discountedPrice: '₹28,000',
+    savings: 'Save ₹4,000',
     tagline: 'Sell online with a full store, cart workflow, and payment gateway built in.',
     icon: ShoppingCart,
     features: [
