@@ -17,8 +17,8 @@ type Pkg = {
 const PACKAGES: Pkg[] = [
   {
     name: 'Starter Landing Page',
-    originalPrice: '₹7,000',
-    discountedPrice: '₹5,000',
+    originalPrice: '₹10,000',
+    discountedPrice: '₹8,000',
     savings: 'Save ₹2,000',
     tagline: 'A fast, focused one-page site to get you online quickly and affordably.',
     icon: Zap,
@@ -36,9 +36,9 @@ const PACKAGES: Pkg[] = [
   },
   {
     name: 'Standard Business Site',
-    originalPrice: '₹15,000',
-    discountedPrice: '₹8,000',
-    savings: 'Save ₹7,000',
+    originalPrice: '₹20,000',
+    discountedPrice: '₹15,000',
+    savings: 'Save ₹5,000',
     tagline: 'A complete multi-page presence for growing businesses that need more room to tell their story.',
     icon: Layout,
     featured: true,
