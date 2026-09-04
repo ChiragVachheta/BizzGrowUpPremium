@@ -149,7 +149,7 @@ export default function CaseStudy({ project }: { project: Project }) {
         </div>
       </section>
 
-      {/* Overview + tech stack */}
+      {/* Overview */}
       <section className="pb-16 sm:pb-20">
         <div className="container-px">
           <div className="mx-auto max-w-3xl">
@@ -157,20 +157,6 @@ export default function CaseStudy({ project }: { project: Project }) {
               Project Overview
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-400">{project.description}</p>
-
-            <h3 className="mt-10 font-display text-sm font-bold uppercase tracking-wider text-slate-500">
-              Tech Stack
-            </h3>
-            <div className="mt-4 flex flex-wrap gap-2.5">
-              {project.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
