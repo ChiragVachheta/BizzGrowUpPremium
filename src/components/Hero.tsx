@@ -35,8 +35,8 @@ export default function Hero() {
           </p>
 
           <div className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row" style={{ animationDelay: '180ms' }}>
-            <a href="#demos" className="btn-primary w-full sm:w-auto">
-              Explore Live Demos
+            <a href="#portfolio" className="btn-primary w-full sm:w-auto">
+              View Our Work
               <ArrowRight className="h-4 w-4" />
             </a>
             <a

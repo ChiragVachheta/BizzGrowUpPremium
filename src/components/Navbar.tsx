@@ -1,6 +1,23 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Sparkles } from 'lucide-react';
 import { COMPANY, NAV_LINKS, waLink } from '@/lib/site';
+
+function NavLink({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) {
+  const cls = 'text-base font-medium text-slate-300 transition-colors duration-200 hover:text-white';
+  if (href.startsWith('/')) {
+    return (
+      <Link to={href} onClick={onClick} className={cls}>
+        {label}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} onClick={onClick} className={cls}>
+      {label}
+    </a>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -37,12 +54,7 @@ export default function Navbar() {
         <ul className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-base font-medium text-slate-300 transition-colors duration-200 hover:text-white"
-              >
-                {l.label}
-              </a>
+              <NavLink href={l.href} label={l.label} />
             </li>
           ))}
         </ul>
@@ -81,14 +93,9 @@ export default function Navbar() {
         <div className="lg:hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-xl">
           <div className="container-px py-5 flex flex-col gap-1">
             {NAV_LINKS.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white"
-              >
-                {l.label}
-              </a>
+              <div key={l.href}>
+                <NavLink href={l.href} label={l.label} onClick={() => setOpen(false)} />
+              </div>
             ))}
             <div className="mt-3 flex flex-col gap-3">
               <a

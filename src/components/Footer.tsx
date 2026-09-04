@@ -1,5 +1,22 @@
 import { Sparkles, Mail, MessageCircle, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { COMPANY, NAV_LINKS, waLink } from '@/lib/site';
+
+function FooterLink({ href, label }: { href: string; label: string }) {
+  const cls = 'text-sm text-slate-400 transition-colors hover:text-brand-300';
+  if (href.startsWith('/')) {
+    return (
+      <Link to={href} className={cls}>
+        {label}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={cls}>
+      {label}
+    </a>
+  );
+}
 
 const SOCIALS = [
   {
@@ -55,9 +72,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {NAV_LINKS.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-sm text-slate-400 transition-colors hover:text-brand-300">
-                    {l.label}
-                  </a>
+                  <FooterLink href={l.href} label={l.label} />
                 </li>
               ))}
             </ul>

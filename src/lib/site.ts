@@ -11,7 +11,7 @@ export function waLink(message: string): string {
 
 export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
-  { label: 'Live Demos', href: '#demos' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Process', href: '#process' },
   { label: 'FAQ', href: '#faq' },
