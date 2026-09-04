@@ -10,7 +10,7 @@ const FAQS: QA[] = [
     a: 'Most local business websites are designed, built, and launched in 15 days or less. After you share your business details, we deliver a working prototype within days, refine it with your feedback, and go live on your domain.',
   },
   {
-    q: 'What is included in the ₹7,000 Starter Landing Page package?',
+    q: 'What is included in the Starter Landing Page package?',
     a: 'The Starter package includes a one-page responsive website, lightning-fast loading, a contact form, mobile-first design, and Technical & Code-Level SEO built in. It is ideal for small local businesses that need a quick, professional online presence.',
   },
   {
