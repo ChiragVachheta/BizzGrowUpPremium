@@ -5,6 +5,7 @@ export type Project = {
   liveUrl: string;
   tagline: string;
   description: string;
+  techStack: string[];
   features: { icon: string; title: string; desc: string }[];
   accent: string;
 };
@@ -18,6 +19,7 @@ export const PROJECTS: Project[] = [
     tagline: 'A full-stack e-commerce platform for a local electrical retail store.',
     description:
       'A full-stack e-commerce web application developed for a local electrical retail store in Ahmedabad. Built with a scalable architecture, custom database migration scripts, and seamless payment gateway integration for secure online transactions. The platform enables customers to browse the product catalog, add items to cart, and complete secure online checkout — all tailored to the store\u2019s inventory and branding.',
+    techStack: ['React', 'Supabase', 'PostgreSQL', 'Stripe', 'Vercel'],
     features: [
       { icon: 'shopping-cart', title: 'Full Product Catalog', desc: 'Browseable inventory with categories, search, and product detail pages.' },
       { icon: 'credit-card', title: 'Secure Payments', desc: 'Integrated payment gateway for safe online transactions.' },
@@ -34,6 +36,7 @@ export const PROJECTS: Project[] = [
     tagline: 'A responsive service-booking platform for device repair technicians.',
     description:
       'A responsive service-oriented web application designed to streamline device repair bookings and customer inquiries. It features an intuitive user interface that allows customers to quickly find repair services and get in touch with technicians. The platform reduces friction in the booking process, helping the business capture more leads and schedule repairs efficiently.',
+    techStack: ['React', 'Tailwind CSS', 'Vercel'],
     features: [
       { icon: 'wrench', title: 'Service Booking', desc: 'Customers can request repairs with a simple, guided flow.' },
       { icon: 'phone', title: 'Inquiry Management', desc: 'Quick contact options to reach technicians directly.' },
